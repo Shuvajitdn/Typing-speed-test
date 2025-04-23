@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Test Game</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button id="theme-toggle"><i class="fas fa-sun"></i></button>
+    <div class="container">
+        <h1>Key Blaze</h1>
+        
+        <div class="tab-container">
+            <button class="tab active" data-tab="game">Game</button>
+            <button class="tab" data-tab="profile">Profile</button>
+            <button class="tab" data-tab="leaderboard">Leaderboard</button>
+            <button class="tab" data-tab="progress">Progress</button>
+        </div>
+
+        <div id="game" class="tab-content card active">
+            <h2 class="card-title">Typing Test</h2>
+            <select id="difficulty">
+                <option value="easy">Easy</option>
+                <option value="medium" selected>Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+            <div class="timer-bar">
+                <div class="timer-progress" id="timer-progress"></div>
+            </div>
+            <div id="text-display"></div>
+            <textarea id="user-input" rows="4" disabled></textarea>
+            <div class="stats">
+                <span id="time">Time: 60s</span>
+                <span id="wpm">WPM: 0</span>
+                <span id="accuracy">Accuracy: 100%</span>
+            </div>
+            <button id="start-btn">Start Game</button>
+            <div id="keyboard"></div>
+        </div>
+
+        <div id="profile" class="tab-content card">
+            <h2 class="card-title">User Profile</h2>
+            <p>Username: <span id="username">Shuvajit Debnath</span></p>
+            <p>High Score: <span id="high-score">0</span> WPM</p>
+            <h3>Achievements:</h3>
+            <div id="achievements"></div>
+        </div>
+
+        <div id="leaderboard" class="tab-content card">
+            <h2 class="card-title">Leaderboard</h2>
+            <table id="leaderboard-table">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Username</th>
+                        <th>WPM</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <div id="progress" class="tab-content card">
+            <h2 class="card-title">Your Progress</h2>
+            <canvas id="progress-chart"></canvas>
+        </div>
+    </div>
+
+    <div id="congrats">Congratulations🎉 You crushed it!</div>
+    <div id="level-up">Level Up!</div>
+    <canvas id="confetti-canvas"></canvas>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+<script src="script.js"></script>
+</html>
